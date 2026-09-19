@@ -229,40 +229,84 @@ svg {
 }
 
 .original-contact__intro {
-  margin: 0 0 50px;
+  margin: 0 0 32px;
   color: var(--white);
   font-family: var(--nobile);
   font-size: 20px;
   line-height: 1.67;
-  text-align: justify;
+  text-align: left;
 }
 
-.contact-row {
+.contact-actions {
   display: grid;
-  grid-template-columns: 26px 1fr;
-  gap: 25px;
-  align-items: start;
-  min-height: 37px;
-  margin-bottom: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
 }
 
-.contact-row:last-child {
-  margin-bottom: 0;
-}
-
-.contact-row svg {
-  width: 26px;
-  height: 26px;
-  margin-top: 3px;
-  fill: var(--white);
-}
-
-.contact-row a {
+.contact-action {
+  min-height: 78px;
+  padding: 13px 16px;
+  border: 1px solid var(--white);
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 13px;
+  align-items: center;
   color: var(--white);
-  font-family: var(--nobile);
-  font-size: 20px;
-  line-height: 1.67;
-  text-decoration: underline;
+  text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.contact-action--primary,
+.contact-action:hover,
+.contact-action:focus-visible {
+  background: var(--white);
+  color: var(--black);
+}
+
+.contact-action--primary:hover,
+.contact-action--primary:focus-visible {
+  background: var(--light-gray);
+}
+
+.contact-action svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.contact-action strong,
+.contact-action small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.contact-action strong {
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.contact-action small {
+  margin-top: 3px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.trust-line {
+  margin-top: 38px;
+  padding-top: 20px;
+  border-top: 1px solid var(--dark-gray);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: var(--light-gray);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.trust-line span + span::before {
+  margin: 0 12px;
+  color: var(--gray);
+  content: "·";
 }
 
 .site-footer {
@@ -282,7 +326,7 @@ svg {
 }
 
 .footer-inner h2 {
-  margin: 0 0 21px;
+  margin: 0 0 5px;
   font-family: var(--playfair);
   font-size: 22px;
   font-weight: 400;
@@ -298,6 +342,11 @@ svg {
 
 .footer-inner a {
   color: var(--white);
+}
+
+.footer-role {
+  margin-bottom: 12px !important;
+  color: var(--light-gray);
 }
 
 .footer-legal {
@@ -333,21 +382,21 @@ svg {
   align-items: start;
 }
 
-.attorney-page__body ul {
-  margin: 2px 0 0;
-  padding-left: 27px;
-}
-
-.attorney-page__body li {
-  padding-left: 3px;
+.attorney-page__copy p {
+  margin: 0 0 26px;
   color: var(--white);
   font-family: var(--nobile);
   font-size: 20px;
   line-height: 1.67;
 }
 
-.attorney-page__body li + li {
-  margin-top: 33px;
+.attorney-page__copy p:last-child {
+  margin-bottom: 0;
+}
+
+.attorney-page__copy .attorney-page__personal {
+  color: var(--light-gray);
+  font-size: 17px;
 }
 
 .attorney-page__photo {
@@ -382,8 +431,8 @@ svg {
 }
 
 .original-practice-page__copy p {
-  margin: 0 0 33px;
-  text-align: justify;
+  margin: 0 0 25px;
+  text-align: left;
 }
 
 .original-practice-page__copy ul {
@@ -396,7 +445,7 @@ svg {
 }
 
 .original-practice-page__copy li + li {
-  margin-top: 33px;
+  margin-top: 20px;
 }
 
 .original-practice-page__copy li p {
@@ -471,17 +520,26 @@ svg {
 }
 
 .merged-practice-section {
-  margin-top: 58px;
-  padding-top: 47px;
+  margin-top: 52px;
+  padding-top: 42px;
   border-top: 1px solid var(--dark-gray);
 }
 
 .merged-practice-section h2 {
-  margin: 0 0 33px;
+  margin: 0 0 25px;
   font-family: var(--playfair);
   font-size: 40px;
   font-weight: 400;
   line-height: 1.35;
+}
+
+.original-practice-page__copy .merged-practice-section__label {
+  margin: 0 0 8px;
+  color: var(--light-gray);
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* Innenseiten nutzen dieselbe Gestaltung; ihre Inhalte werden nach den
@@ -627,7 +685,8 @@ svg {
 
 @media (max-width: 760px) {
   .wordmark {
-    margin-top: 30px;
+    margin-top: 26px;
+    margin-bottom: 22px;
     font-size: clamp(29px, 9vw, 40px);
   }
 
@@ -643,16 +702,27 @@ svg {
   }
 
   .attorney-page {
-    padding: 38px 21px 45px;
+    padding: 32px 21px 40px;
   }
 
   .attorney-page h1 {
-    font-size: clamp(38px, 10vw, 50px);
+    margin-bottom: 25px;
+    font-size: clamp(34px, 10vw, 50px);
   }
 
   .attorney-page__body {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
+  }
+
+  .attorney-page__copy p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .attorney-page__copy .attorney-page__personal {
+    font-size: 16px;
   }
 
   .attorney-page__photo {
@@ -685,6 +755,42 @@ svg {
     width: 100%;
   }
 
+  .merged-practice-page .original-practice-page__image {
+    margin-bottom: 44px;
+  }
+
+  .original-practice-page__copy {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .original-practice-page__copy h1 {
+    margin-bottom: 22px;
+    font-size: 34px;
+  }
+
+  .merged-practice-section {
+    margin-top: 40px;
+    padding-top: 32px;
+  }
+
+  .merged-practice-section h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+  }
+
+  .original-practice-page__copy p {
+    margin-bottom: 20px;
+  }
+
+  .original-practice-page__copy li + li {
+    margin-top: 16px;
+  }
+
+  .contact-actions {
+    grid-template-columns: 1fr;
+  }
+
   .lawyer-photo {
     max-width: 340px;
   }
@@ -710,7 +816,7 @@ svg {
 
   .original-hero {
     max-width: calc(100% - 30px);
-    margin-bottom: 48px;
+    margin-bottom: 42px;
   }
 
   .original-contact {
@@ -718,16 +824,29 @@ svg {
   }
 
   .original-contact h2 {
-    font-size: 34px;
+    font-size: 32px;
   }
 
-  .original-contact__intro,
-  .contact-row a {
+  .original-contact__intro {
     font-size: 17px;
   }
 
-  .contact-row {
-    gap: 18px;
+  .trust-line {
+    justify-content: flex-start;
+    font-size: 13px;
+  }
+
+  .trust-line span {
+    width: 100%;
+  }
+
+  .trust-line span + span::before {
+    margin: 0 8px 0 0;
+  }
+
+  .footer-inner {
+    padding-top: 24px;
+    padding-bottom: 22px;
   }
 }
 
