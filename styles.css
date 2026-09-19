@@ -133,8 +133,7 @@ svg {
   line-height: 30px;
 }
 
-.site-nav > a,
-.nav-dropdown > button {
+.site-nav > a {
   height: 30px;
   padding: 0 15px;
   border: 0;
@@ -147,61 +146,12 @@ svg {
 }
 
 .site-nav > a:hover,
-.site-nav > a:focus-visible,
-.nav-dropdown > button:hover,
-.nav-dropdown > button:focus-visible {
+.site-nav > a:focus-visible {
   color: var(--light-gray);
 }
 
 .site-nav > a.is-active {
   color: var(--white);
-}
-
-.nav-dropdown > button.is-active {
-  color: var(--white);
-}
-
-.nav-dropdown {
-  position: relative;
-}
-
-.nav-dropdown > button {
-  width: 151px;
-  padding: 0;
-}
-
-.nav-dropdown__menu {
-  position: absolute;
-  z-index: 20;
-  top: 30px;
-  left: 50%;
-  display: none;
-  width: 285px;
-  margin: 0;
-  padding: 9px 0;
-  background: var(--black);
-  list-style: none;
-  transform: translateX(-50%);
-}
-
-.nav-dropdown:hover .nav-dropdown__menu,
-.nav-dropdown:focus-within .nav-dropdown__menu,
-.nav-dropdown.is-open .nav-dropdown__menu {
-  display: block;
-}
-
-.nav-dropdown__menu a {
-  display: block;
-  padding: 5px 16px;
-  color: var(--gray);
-  line-height: 1.55;
-  text-align: center;
-  text-decoration: none;
-}
-
-.nav-dropdown__menu a:hover,
-.nav-dropdown__menu a:focus-visible {
-  color: var(--light-gray);
 }
 
 .menu-button {
@@ -502,6 +452,31 @@ svg {
   padding-bottom: 24px;
 }
 
+.merged-practice-page .original-practice-page__image {
+  width: 600px;
+  height: 400px;
+  margin: 8px auto 70px;
+}
+
+.merged-practice-page .original-practice-page__copy {
+  width: 875px;
+  padding-bottom: 55px;
+}
+
+.merged-practice-section {
+  margin-top: 58px;
+  padding-top: 47px;
+  border-top: 1px solid var(--dark-gray);
+}
+
+.merged-practice-section h2 {
+  margin: 0 0 33px;
+  font-family: var(--playfair);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
 /* Innenseiten nutzen dieselbe Gestaltung; ihre Inhalte werden nach den
    entsprechenden Wix-Vorlagen im nächsten Schritt exakt gesetzt. */
 .page-title,
@@ -708,7 +683,8 @@ svg {
   .practice-mietrecht .original-practice-page__image,
   .practice-handelsrecht .original-practice-page__image,
   .practice-gesellschaftsrecht .original-practice-page__image,
-  .practice-steuerrecht .original-practice-page__image {
+  .practice-steuerrecht .original-practice-page__image,
+  .merged-practice-page .original-practice-page__image {
     max-width: 100%;
     height: auto;
   }
@@ -717,7 +693,8 @@ svg {
   .practice-mietrecht .original-practice-page__copy,
   .practice-handelsrecht .original-practice-page__copy,
   .practice-gesellschaftsrecht .original-practice-page__copy,
-  .practice-steuerrecht .original-practice-page__copy {
+  .practice-steuerrecht .original-practice-page__copy,
+  .merged-practice-page .original-practice-page__copy {
     width: 100%;
   }
 
@@ -738,15 +715,10 @@ svg {
     margin-left: 15px;
   }
 
-  .site-nav > a,
-  .nav-dropdown > button {
+  .site-nav > a {
     padding-right: 9px;
     padding-left: 9px;
     font-size: 13px;
-  }
-
-  .nav-dropdown > button {
-    width: auto;
   }
 
   .original-hero {
