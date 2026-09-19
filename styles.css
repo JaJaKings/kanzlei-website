@@ -167,8 +167,10 @@ svg {
   position: relative;
   width: 938px;
   max-width: calc(100% - 42px);
-  height: 362px;
+  height: auto;
+  aspect-ratio: 938 / 362;
   margin: 17px auto 67px;
+  container-type: inline-size;
 }
 
 .original-hero__image {
@@ -180,26 +182,31 @@ svg {
 
 .original-hero__frame {
   position: absolute;
-  top: 23px;
-  left: 20px;
-  width: 311px;
-  min-height: 168px;
-  border: 5px solid var(--white);
+  top: 6.354%;
+  left: 2.132%;
+  width: 33.156%;
+  min-height: 46.409%;
+  border: clamp(2px, 0.533cqw, 5px) solid var(--white);
   pointer-events: none;
 }
 
 .original-hero h1 {
   position: absolute;
   z-index: 1;
-  top: 23px;
-  left: 55px;
-  width: 241px;
+  top: 6.354%;
+  left: 5.864%;
+  width: 28.8%;
   margin: 0;
   color: var(--white);
   font-family: var(--playfair);
-  font-size: 40px;
+  font-size: clamp(10px, 4.264cqw, 40px);
   font-weight: 400;
   line-height: 1.35;
+}
+
+.original-hero h1 span {
+  display: block;
+  white-space: nowrap;
 }
 
 .original-contact {
@@ -630,26 +637,6 @@ svg {
     flex-wrap: wrap;
   }
 
-  .original-hero {
-    height: auto;
-    aspect-ratio: 938 / 362;
-  }
-
-  .original-hero__frame {
-    top: 6.4%;
-    left: 2.1%;
-    width: 33.2%;
-    min-height: 46.4%;
-    border-width: 4px;
-  }
-
-  .original-hero h1 {
-    top: 6.4%;
-    left: 5.9%;
-    width: 25.7%;
-    font-size: clamp(20px, 5.2vw, 40px);
-  }
-
   .lawyer-layout,
   .legal-layout {
     grid-template-columns: 1fr;
@@ -724,16 +711,6 @@ svg {
   .original-hero {
     max-width: calc(100% - 30px);
     margin-bottom: 48px;
-  }
-
-  .original-hero__frame {
-    width: 43%;
-    min-height: 59%;
-  }
-
-  .original-hero h1 {
-    width: 34%;
-    font-size: clamp(18px, 6.2vw, 31px);
   }
 
   .original-contact {
