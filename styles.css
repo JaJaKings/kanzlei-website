@@ -253,19 +253,26 @@ svg {
   align-items: center;
   color: var(--white);
   text-decoration: none;
-  transition: background-color 160ms ease, color 160ms ease;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
-.contact-action--primary,
 .contact-action:hover,
 .contact-action:focus-visible {
-  background: var(--white);
-  color: var(--black);
+  background: var(--dark-gray);
+  border-color: var(--light-gray);
+  color: var(--white);
+}
+
+.contact-action--primary {
+  background: var(--dark-gray);
+  border-color: var(--gray);
+  color: var(--white);
 }
 
 .contact-action--primary:hover,
 .contact-action--primary:focus-visible {
-  background: var(--light-gray);
+  background: #555;
+  border-color: var(--white);
 }
 
 .contact-action svg {
@@ -515,7 +522,7 @@ svg {
 }
 
 .merged-practice-page .original-practice-page__copy {
-  width: 875px;
+  width: 720px;
   padding-bottom: 55px;
 }
 
