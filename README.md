@@ -18,5 +18,3 @@ python3 -m http.server 4173
 4. Bei STRATO für `www` einen CNAME auf `<github-benutzername>.github.io` setzen.
 5. Die Hauptdomain entweder bei STRATO auf `www.jacobs-kanzlei.com` weiterleiten oder entsprechend den aktuellen GitHub-Hinweisen per DNS anbinden.
 6. In GitHub Pages die benutzerdefinierte Domain `www.jacobs-kanzlei.com` und anschließend HTTPS aktivieren.
-
-Vor Veröffentlichung die markierten Hinweise in Impressum und Datenschutz klären.
